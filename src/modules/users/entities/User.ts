@@ -47,6 +47,9 @@ class User {
   @Column()
   user_state: string;
 
+  @Column()
+  user_avatar: string;
+
   @CreateDateColumn()
   user_created_at: Date;
 
