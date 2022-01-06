@@ -10,13 +10,13 @@ class ShowUserByIdService {
   public async execute({ user_id }: IRequest): Promise<User> {
     const usersRepository = getRepository(User);
 
-    const users = await usersRepository.findOne(user_id);
+    const user = await usersRepository.findOne(user_id);
 
-    if (!users) {
+    if (!user) {
       throw new AppError('No registered user', 406);
     }
 
-    return users;
+    return user;
   }
 }
 
